@@ -1,6 +1,6 @@
 {
   "name": "next-core-utilities",
-  "version": "2.5.3",
+  "version": "2.5.4",
   "description": "The Augmented.js Next - Utilities and Functions.",
   "main": "dist/next-core-utilities.js",
   "scripts": {
