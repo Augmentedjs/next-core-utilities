@@ -1,2 +1,2 @@
-# next-core-functions
-Augmented.js Next Core - Functions
+# next-core-utilities
+Augmented.js Next Core - Utilities and Functions
