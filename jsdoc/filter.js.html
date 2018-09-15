@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-		<title>isString.js</title>
+		<title>filter.js</title>
 		<link rel="icon" type="image/png" href="favicon.png"/>
 		<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -108,7 +108,7 @@
 	<!-- end:navbar.hbs -->		<div class="page-header">
 			<div class="container">
 				<span class="kind">source</span>
-				<h1><span class="name">isString.js</span></h1>
+				<h1><span class="name">filter.js</span></h1>
 			</div>
 		</div>
 	<div class="container content">
@@ -117,16 +117,19 @@
 		<section class="source-section">
 			<article></article>
 			<pre class="prettyprint source language-javascript line-numbers"><code class="language-javascript">/**
- * isString -
- * checks if a value is a String
- * @param {string} variable to check
- * @returns {boolean} true if value is a string
+ * Filter a string by removing a char
+ * @param {string} str The string
+ * @param {string} char The char
+ * @returns {string} The filtered string
  */
-const isString = (val) => {
-  return (typeof val === "string") || ((!!val &amp;&amp; typeof val === "object") &amp;&amp; Object.prototype.toString.call(val) === "[object String]");
+const filter = (str, char) => {
+  if (str &amp;&amp; char) {
+    return [].filter.call(str, c => c != char).join("");
+  }
+  return null;
 };
 
-export default isString;
+export default filter;
 </code></pre>
 		</section>
 			</div>

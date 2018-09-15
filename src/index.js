@@ -23,6 +23,8 @@ import { sortObjects, mergeSort, quickSort, insertionSort, bubbleSort } from "./
 import formatDate from "./formatDate.js";
 import formatBinary from "./formatBinary.js";
 
+import filter from "./filter.js";
+
 module.exports.shuffle = shuffle;
 module.exports.prettyPrint = prettyPrint;
 module.exports.binarySearch = binarySearch;
@@ -58,5 +60,7 @@ module.exports.some = some;
 module.exports.splice = splice;
 module.exports.before = before;
 module.exports.once = once;
+module.exports.filter = filter;
+
 module.exports.fibonacci = fibonacci;
 module.exports.fibonacciSequence = fibonacciSequence;
