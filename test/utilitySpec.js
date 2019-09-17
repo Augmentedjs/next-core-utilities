@@ -91,16 +91,7 @@ describe("Given Utilities", () => {
 			expect(a).to.equal("_____This is a string");
 		});
 	});
-
-	describe("Given a number", () => {
-		it("can format as binary", () => {
-			const a = Utilities.formatBinary(25, 8);
-			expect(a).to.not.equal(25);
-			expect(a).to.not.equal("");
-			expect(a).to.equal("10011000");
-		});
-	});
-
+	
 	describe("Given a date", () => {
 		it("can format as string in US format", () => {
 			const a = Utilities.formatDate(new Date("12/25/1999"));

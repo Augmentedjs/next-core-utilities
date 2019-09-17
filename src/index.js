@@ -21,7 +21,7 @@ import { shuffle, prettyPrint, binarySearch, TransformerType, Transformer, wrap,
 import { sortObjects, mergeSort, quickSort, insertionSort, bubbleSort } from "./sort.js";
 
 import formatDate from "./formatDate.js";
-import formatBinary from "./formatBinary.js";
+import { formatBinary, binaryToHex, reverseBitwise } from "./formatBinary.js";
 
 import filter from "./filter.js";
 
@@ -42,6 +42,7 @@ module.exports.bubbleSort = bubbleSort;
 
 module.exports.formatDate = formatDate;
 module.exports.formatBinary = formatBinary;
+module.exports.binaryToHex = binaryToHex;
 
 module.exports.isString = isString;
 module.exports.isFunction = isFunction;

@@ -11,11 +11,26 @@ const createBinaryString = (nMask) => {
  * @function formatBinary
  * @memberof Utility
  * @param {num} num The number to format
-  * @param {pres} pres The bit precision
+ * @param {pres} pres The bit precision
  * @returns {string} The formatted binary string
  */
-const formatBinary = (num, pres) => {
+export const formatBinary = (num, pres) => {
   return createBinaryString(num).split("").reverse().join("").substring(0, pres);
 };
 
-export default formatBinary;
+/**
+ * Format a binary string into a hex value (two characters)
+ * @function binaryToHex
+ * @memberof Utility
+ * @param {binary} binary The 8-bit binary string to return as hex characters
+ * @param {pad} pad Add a zero if under '10'
+ * @returns {string} The hex value
+ */
+export const binaryToHex = (binary, pad) => {
+  const num = parseInt(binary.split("").reverse().join(""), 2);
+  let zero = "";
+  if (num < 16 && pad) {
+    zero = "0";
+  }
+  return `${zero}${num.toString(16)}`;
+};
