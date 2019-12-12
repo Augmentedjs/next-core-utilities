@@ -66,6 +66,9 @@ Augmented.js Next Core - Utilities and Functions
     -   [Parameters](#parameters-25)
 -   [filter](#filter)
     -   [Parameters](#parameters-26)
+-   [sizeOf](#sizeof)
+-   [formatByteSize](#formatbytesize)
+-   [memorySizeOf](#memorysizeof)
 
 ## isString
 
@@ -387,3 +390,21 @@ Filter a string by removing a char
 -   `char` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The char
 
 Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The filtered string
+
+## sizeOf
+
+Returns the size in bytes of an object
+
+Returns **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** size in bytes
+
+## formatByteSize
+
+Returns the number (in bytes) as a human readable string
+
+Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** size in formated human readable string
+
+## memorySizeOf
+
+Returns the object size as a human readable string
+
+Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** size in formated human readable string

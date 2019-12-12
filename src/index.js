@@ -25,6 +25,8 @@ import { formatBinary, binaryToHex } from "./formatBinary.js";
 
 import filter from "./filter.js";
 
+import { sizeOf, formatByteSize, memorySizeOf } from "./sizeOf.js";
+
 module.exports.shuffle = shuffle;
 module.exports.prettyPrint = prettyPrint;
 module.exports.binarySearch = binarySearch;
@@ -65,3 +67,7 @@ module.exports.filter = filter;
 
 module.exports.fibonacci = fibonacci;
 module.exports.fibonacciSequence = fibonacciSequence;
+
+module.exports.sizeOf = sizeOf;
+module.exports.formatByteSize = formatByteSize;
+module.exports.memorySizeOf = memorySizeOf;

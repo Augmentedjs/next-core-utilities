@@ -1,12 +1,13 @@
 {
   "name": "next-core-utilities",
-  "version": "2.7.1",
+  "version": "2.8.0",
   "description": "The Augmented.js Next - Utilities and Functions.",
   "main": "dist/next-core-utilities.js",
   "scripts": {
     "dev": "webpack --mode development --module-bind js=babel-loader --progress",
     "build": "webpack --mode production --module-bind js=babel-loader --progress",
     "test": "mocha --require babel-core/register --require test/helper.js -c test/*Spec.js",
+    "testthis": "mocha --require babel-core/register --require test/helper.js",
     "start": "node index.js",
     "docs": "rm -rf jsdoc && jsdoc ./src -r -d ./jsdoc/ -R ./README.md -t ./node_modules/foodoc/template -c ./jsdoc.conf.json -P ./package.json",
     "readme": "./node_modules/documentation/bin/documentation.js readme ./src/index.js -f md --section=API",
@@ -29,14 +30,14 @@
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.2.0",
-    "documentation": "^12.1.2",
+    "documentation": "^12.1.4",
     "foodoc": "0.0.9",
     "jsdoc": "^3.6.3",
-    "jsdom": "^15.1.1",
-    "mocha": "^6.2.0",
+    "jsdom": "^15.2.1",
+    "mocha": "^6.2.2",
     "mocha-jsdom": "^2.0.0",
-    "webpack": "^4.40.2",
-    "webpack-cli": "^3.3.9"
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   },
   "dependencies": {},
   "bugs": {
