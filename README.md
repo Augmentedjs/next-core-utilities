@@ -69,6 +69,8 @@ Augmented.js Next Core - Utilities and Functions
 -   [sizeOf](#sizeof)
 -   [formatByteSize](#formatbytesize)
 -   [memorySizeOf](#memorysizeof)
+-   [hammingDistance](#hammingdistance)
+    -   [Parameters](#parameters-27)
 
 ## isString
 
@@ -408,3 +410,16 @@ Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 Returns the object size as a human readable string
 
 Returns **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** size in formated human readable string
+
+## hammingDistance
+
+The Hamming Distance is the number of different symbols between two
+strings/numbers (equal length). It can be also considered as the number of
+changes required to convert from one input to another.
+
+### Parameters
+
+-   `num1` **([number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) \| [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))** First number
+-   `num2` **([number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) \| [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))** Second number
+
+Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** the distance

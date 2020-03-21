@@ -27,6 +27,8 @@ import filter from "./filter.js";
 
 import { sizeOf, formatByteSize, memorySizeOf } from "./sizeOf.js";
 
+import hammingDistance from "./hamming.js";
+
 module.exports.shuffle = shuffle;
 module.exports.prettyPrint = prettyPrint;
 module.exports.binarySearch = binarySearch;
@@ -71,3 +73,5 @@ module.exports.fibonacciSequence = fibonacciSequence;
 module.exports.sizeOf = sizeOf;
 module.exports.formatByteSize = formatByteSize;
 module.exports.memorySizeOf = memorySizeOf;
+
+module,exports.hammingDistance = hammingDistance;
