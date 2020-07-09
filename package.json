@@ -27,17 +27,17 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
+    "babel-loader": "^8.1.0",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.2.0",
-    "documentation": "^12.1.4",
+    "documentation": "^13.0.2",
     "foodoc": "0.0.9",
-    "jsdoc": "^3.6.3",
-    "jsdom": "^15.2.1",
-    "mocha": "^6.2.2",
+    "jsdoc": "^3.6.4",
+    "jsdom": "^16.2.2",
+    "mocha": "^8.0.1",
     "mocha-jsdom": "^2.0.0",
-    "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11"
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {},
   "bugs": {
