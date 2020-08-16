@@ -1,13 +1,13 @@
 {
   "name": "next-core-utilities",
   "version": "3.0.0",
-  "description": "The Augmented.js Next - Utilities and Functions.",
+  "description": "Augmented Next Core - Utilities and Functions.",
   "main": "dist/next-core-utilities.js",
   "scripts": {
     "dev": "webpack --mode development --module-bind js=babel-loader --progress",
     "build": "webpack --mode production --module-bind js=babel-loader --progress",
-    "test": "mocha --require babel-core/register --require test/helper.js -c test/*Spec.js",
-    "testthis": "mocha --require babel-core/register --require test/helper.js",
+    "test": "mocha --require @babel/register --require test/helper.js -c test/*Spec.js",
+    "testthis": "mocha --require @babel/register --require test/helper.js",
     "start": "node index.js",
     "docs": "rm -rf jsdoc && jsdoc ./src -r -d ./jsdoc/ -R ./README.md -t ./node_modules/foodoc/template -c ./jsdoc.conf.json -P ./package.json",
     "readme": "./node_modules/documentation/bin/documentation.js readme ./src/index.js -f md --section=API",
@@ -26,14 +26,16 @@
   "author": "Bob Warren <jedi.master@augmentedjs.com> (http://www.augmentedjs.com)",
   "license": "Apache-2.0",
   "devDependencies": {
-    "babel-core": "^6.26.3",
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/register": "^7.10.5",
     "babel-loader": "^8.1.0",
-    "babel-preset-env": "^1.7.0",
     "chai": "^4.2.0",
+    "clean-webpack-plugin": "^3.0.0",
     "documentation": "^13.0.2",
     "foodoc": "0.0.9",
     "jsdoc": "^3.6.5",
-    "jsdom": "^16.3.0",
+    "jsdom": "^16.4.0",
     "mocha": "^8.1.1",
     "mocha-jsdom": "^2.0.0",
     "webpack": "^4.44.1",
@@ -43,5 +45,5 @@
   "bugs": {
     "url": "https://github.com/Augmentedjs/next-core-utilities/issues"
   },
-  "homepage": "http://www.augmentedjs.com"
+  "homepage": "https://www.augmentedjs.com"
 }

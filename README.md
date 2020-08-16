@@ -1,6 +1,6 @@
 # next-core-utilities
 
-Augmented.js Next Core - Utilities and Functions
+Augmented Next Core - Utilities and Functions
 
 # API
 

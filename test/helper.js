@@ -5,10 +5,10 @@ const dom = (new JSDOM('<!doctype html><html><body><article><section id="header"
 global.document = dom.document;
 global.window = dom.window;
 global.navigator = {
-  userAgent: 'node.js'
+  userAgent: "node.js"
 };
 
-global.Utilities = require("../dist/next-core-utilities.js");
+global.Utilities = require("../src/index.js");
 
 const chai = require("chai");
 global.chai = chai;
