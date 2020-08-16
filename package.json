@@ -1,6 +1,6 @@
 {
   "name": "next-core-utilities",
-  "version": "2.9.0",
+  "version": "3.0.0",
   "description": "The Augmented.js Next - Utilities and Functions.",
   "main": "dist/next-core-utilities.js",
   "scripts": {
@@ -32,11 +32,11 @@
     "chai": "^4.2.0",
     "documentation": "^13.0.2",
     "foodoc": "0.0.9",
-    "jsdoc": "^3.6.4",
-    "jsdom": "^16.2.2",
-    "mocha": "^8.0.1",
+    "jsdoc": "^3.6.5",
+    "jsdom": "^16.3.0",
+    "mocha": "^8.1.1",
     "mocha-jsdom": "^2.0.0",
-    "webpack": "^4.43.0",
+    "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {},

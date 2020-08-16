@@ -29,49 +29,51 @@ import { sizeOf, formatByteSize, memorySizeOf } from "./sizeOf.js";
 
 import hammingDistance from "./hamming.js";
 
-module.exports.shuffle = shuffle;
-module.exports.prettyPrint = prettyPrint;
-module.exports.binarySearch = binarySearch;
-module.exports.TransformerType = TransformerType;
-module.exports.Transformer = Transformer;
-module.exports.wrap = wrap;
-module.exports.filterObject = filterObject;
-module.exports.findByMatchingProperties = findByMatchingProperties;
+export {
+  shuffle,
+  prettyPrint,
+  binarySearch,
+  TransformerType,
+  Transformer,
+  wrap,
+  filterObject,
+  findByMatchingProperties,
 
-module.exports.sortObjects = sortObjects;
-module.exports.mergeSort = mergeSort;
-module.exports.quickSort = quickSort;
-module.exports.insertionSort = insertionSort;
-module.exports.bubbleSort = bubbleSort;
+  sortObjects,
+  mergeSort,
+  quickSort,
+  insertionSort,
+  bubbleSort,
 
-module.exports.formatDate = formatDate;
-module.exports.formatBinary = formatBinary;
-module.exports.binaryToHex = binaryToHex;
+  formatDate,
+  formatBinary,
+  binaryToHex,
 
-module.exports.isString = isString;
-module.exports.isFunction = isFunction;
-module.exports.extend = extend;
-module.exports.pad = pad;
-module.exports.uniqueId = uniqueId;
-module.exports.has = has;
-module.exports.isObject = isObject;
-module.exports.allKeys = allKeys;
-module.exports.create = create;
-module.exports.result = result;
-module.exports.arrayHas = arrayHas;
-module.exports.exec = exec;
-module.exports.isDefined = isDefined;
-module.exports.some = some;
-module.exports.splice = splice;
-module.exports.before = before;
-module.exports.once = once;
-module.exports.filter = filter;
+  isString,
+  isFunction,
+  extend,
+  pad,
+  uniqueId,
+  has,
+  isObject,
+  allKeys,
+  create,
+  result,
+  arrayHas,
+  exec,
+  isDefined,
+  some,
+  splice,
+  before,
+  once,
+  filter,
 
-module.exports.fibonacci = fibonacci;
-module.exports.fibonacciSequence = fibonacciSequence;
+  fibonacci,
+  fibonacciSequence,
 
-module.exports.sizeOf = sizeOf;
-module.exports.formatByteSize = formatByteSize;
-module.exports.memorySizeOf = memorySizeOf;
+  sizeOf,
+  formatByteSize,
+  memorySizeOf,
 
-module,exports.hammingDistance = hammingDistance;
+  hammingDistance
+};
