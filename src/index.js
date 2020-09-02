@@ -34,7 +34,10 @@ import defaults from "./defaults.js";
 import isEmpty from "./isEmpty.js";
 import escape from "./escape.js";
 
+import isRegExp from "./isRegExp.js";
+
 export {
+  isRegExp,
   escape,
   isEmpty,
   defaults,
