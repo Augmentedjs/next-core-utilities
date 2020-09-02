@@ -29,7 +29,10 @@ import { sizeOf, formatByteSize, memorySizeOf } from "./sizeOf.js";
 
 import hammingDistance from "./hamming.js";
 
+import isEqual from "./isEqual.js";
+
 export {
+  isEqual,
   shuffle,
   prettyPrint,
   binarySearch,

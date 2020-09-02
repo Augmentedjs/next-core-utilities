@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-		<title>arrayHas.js</title>
+		<title>isEqual.js</title>
 		<link rel="icon" type="image/png" href="favicon.png"/>
 		<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -113,7 +113,7 @@
 	<!-- end:navbar.hbs -->		<div class="page-header">
 			<div class="container">
 				<span class="kind">source</span>
-				<h1><span class="name">arrayHas.js</span></h1>
+				<h1><span class="name">isEqual.js</span></h1>
 			</div>
 		</div>
 	<div class="container content">
@@ -122,18 +122,136 @@
 		<section class="source-section">
 			<article></article>
 			<pre class="prettyprint source language-javascript line-numbers"><code class="language-javascript">/**
- * Array.has - returns is a property is in the array (very fast return)
- * @function arrayhas
- * @memberof Augmented
- * @param {array} arr Source array
- * @param {object} key Key to test for
- * @returns true if property is included in an array
+ * Performs a deep comparison between two values to determine if they are
+ * equivalent.  This is a simular function to lodash isEquals. &lt;br/>
+ *
+ * &lt;strong>Note:&lt;/strong> This method supports comparing arrays, array buffers,
+ * booleans, dates, error objects, maps, numbers, objects, regexes, sets,
+ * strings, symbols, and typed arrays.
+ * Objects are compared by their own, not inherited, enumerable properties.&lt;/br>
+ * &lt;em>Functions are compared by strict equality, i.e. ===.&lt;/em>&lt;br/>
+ * &lt;em>DOM nodes are considered objects and treaked as such as this library does
+ * not assume browsers.&lt;/em>
+ * @param {any} first The first item
+ * @param {any} second The second item
+ * @returns {boolean} Returns true if equal
  */
-const arrayHas = (arr, key) => {
-  return (arr.indexOf(key) !== -1);
+const isEqual = (first, second) => {
+
+  // console.debug("isEqual", first, second);
+
+  // get some basics out of the way
+  if (!first || !second) {
+    return false;
+  }
+
+  const firstType = typeof first;
+  const secondType = typeof second;
+
+  console.debug("types", firstType, secondType);
+
+  if (firstType !== secondType) {
+    return false;
+  }
+
+  if ((firstType === "string" &amp;&amp; secondType === "string") ||
+      (firstType === "number" &amp;&amp; secondType === "number") ||
+      (firstType === "boolean" &amp;&amp; secondType === "boolean") ||
+      (firstType === "symbol" &amp;&amp; secondType === "symbol")) {
+    return (first === second);
+  } else if (firstType === "function" &amp;&amp; secondType === "function" ||
+      (first instanceof RegExp &amp;&amp; second instanceof RegExp)) {
+    return (first.toString() === second.toString());
+  } else if (first instanceof Date &amp;&amp; second instanceof Date) {
+    return (first.getTime() === second.getTime());
+  } else if (first instanceof Error &amp;&amp; second instanceof Error) {
+    return (first.message === second.message);
+  } else if (first instanceof Map &amp;&amp; second instanceof Map) {
+    first = Object.fromEntries(first);
+    second = Object.fromEntries(second);
+  } else if (first instanceof Set &amp;&amp; second instanceof Set) {
+    first = Array.from(first);
+    second = Array.from(second);
+  } else if (first instanceof ArrayBuffer &amp;&amp; second instanceof ArrayBuffer) {
+    return (first.byteLength === second.byteLength);
+  }
+
+  if (Array.isArray(first) &amp;&amp; Array.isArray(second)) {
+    if (first.length !== second.length) {
+      return false;
+    }
+
+    // dive into the array
+    let i = 0;
+    const sortedFirst = first.sort(),
+          sortedSecond = second.sort(),
+          l = first.length;
+
+    for(i; i &lt; l; i++) {
+      const a = sortedFirst[i],
+            b = sortedSecond[i];
+
+      if (typeof a === "object" &amp;&amp; typeof b === "object") {
+        const ret = isEqual(a, b);
+        if (ret === false) {
+          return false;
+        }
+      } else if (Array.isArray(a) &amp;&amp; Array.isArray(b)) {
+        const ret = isEqual(a, b);
+        if (ret === false) {
+          return false;
+        }
+      } else {
+        if (a !== b) {
+          return false;
+        }
+      }
+    }
+  }
+
+  if (typeof first === "object" &amp;&amp; typeof second === "object") {
+    const firstKeys = Object.keys(first).sort(),
+          secondKeys = Object.keys(second).sort();
+
+    // console.debug("compare objects");
+
+    if (firstKeys.length !== secondKeys.length) {
+      // console.debug("different key lengths");
+      return false;
+    }
+
+    let i = 0;
+    const l = firstKeys.length;
+
+    for(i; i &lt; l; i++) {
+      const a = firstKeys[i],
+            b = secondKeys[i];
+      if (a !== b) {
+        // console.debug("keys don't match", a, b);
+        return false;
+      }
+
+      if (typeof first[a] === "object" &amp;&amp; typeof second[b] === "object") {
+        const ret = isEqual(first[a], second[b]);
+        if (ret === false) {
+          return false;
+        }
+      } else if (Array.isArray(first[a]) &amp;&amp; Array.isArray(second[b])) {
+        const ret = isEqual(a, b);
+        if (ret === false) {
+          return false;
+        }
+      } else {
+        if (first[a] !== second[b]) {
+          return false;
+        }
+      }
+    }
+  }
+  return true;
 };
 
-export default arrayHas;
+export default isEqual;
 </code></pre>
 		</section>
 			</div>

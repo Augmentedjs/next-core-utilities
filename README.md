@@ -71,6 +71,8 @@ Augmented Next Core - Utilities and Functions
 -   [memorySizeOf](#memorysizeof)
 -   [hammingDistance](#hammingdistance)
     -   [Parameters](#parameters-27)
+-   [isEqual](#isequal)
+    -   [Parameters](#parameters-28)
 
 ## isString
 
@@ -423,3 +425,23 @@ changes required to convert from one input to another.
 -   `num2` **([number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) \| [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))** Second number
 
 Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** the distance
+
+## isEqual
+
+Performs a deep comparison between two values to determine if they are
+equivalent.  This is a simular function to lodash isEquals. <br/>
+
+<strong>Note:</strong> This method supports comparing arrays, array buffers,
+booleans, dates, error objects, maps, numbers, objects, regexes, sets,
+strings, symbols, and typed arrays.
+Objects are compared by their own, not inherited, enumerable properties.</br>
+<em>Functions are compared by strict equality, i.e. ===.</em><br/>
+<em>DOM nodes are considered objects and treaked as such as this library does
+not assume browsers.</em>
+
+### Parameters
+
+-   `first` **any** The first item
+-   `second` **any** The second item
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Returns true if equal

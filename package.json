@@ -1,6 +1,6 @@
 {
   "name": "next-core-utilities",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Augmented Next Core - Utilities and Functions.",
   "main": "dist/next-core-utilities.js",
   "scripts": {
@@ -26,9 +26,9 @@
   "author": "Bob Warren <jedi.master@augmentedjs.com> (http://www.augmentedjs.com)",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@babel/core": "^7.11.1",
-    "@babel/preset-env": "^7.11.0",
-    "@babel/register": "^7.10.5",
+    "@babel/core": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/register": "^7.11.5",
     "babel-loader": "^8.1.0",
     "chai": "^4.2.0",
     "clean-webpack-plugin": "^3.0.0",
@@ -36,7 +36,7 @@
     "foodoc": "0.0.9",
     "jsdoc": "^3.6.5",
     "jsdom": "^16.4.0",
-    "mocha": "^8.1.1",
+    "mocha": "^8.1.3",
     "mocha-jsdom": "^2.0.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
