@@ -30,8 +30,14 @@ import { sizeOf, formatByteSize, memorySizeOf } from "./sizeOf.js";
 import hammingDistance from "./hamming.js";
 
 import isEqual from "./isEqual.js";
+import defaults from "./defaults.js";
+import isEmpty from "./isEmpty.js";
+import escape from "./escape.js";
 
 export {
+  escape,
+  isEmpty,
+  defaults,
   isEqual,
   shuffle,
   prettyPrint,
