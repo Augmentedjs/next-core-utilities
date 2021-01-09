@@ -17,7 +17,9 @@ import before from "./before.js";
 import once from "./once.js";
 import { fibonacci, fibonacciSequence } from "./fibonacci.js";
 
-import { shuffle, prettyPrint, binarySearch, TransformerType, Transformer, wrap, filterObject, findByMatchingProperties } from "./utility.js";
+import { prettyPrint, prettyPrintHTML } from "./prettyPrint.js";
+
+import { shuffle, binarySearch, TransformerType, Transformer, wrap, filterObject, findByMatchingProperties } from "./utility.js";
 import { sortObjects, mergeSort, quickSort, insertionSort, bubbleSort } from "./sort.js";
 
 import formatDate from "./formatDate.js";
@@ -44,6 +46,7 @@ export {
   isEqual,
   shuffle,
   prettyPrint,
+  prettyPrintHTML,
   binarySearch,
   TransformerType,
   Transformer,

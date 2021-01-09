@@ -27,52 +27,54 @@ Augmented Next Core - Utilities and Functions
     -   [Parameters](#parameters-7)
 -   [isDefined](#isdefined)
     -   [Parameters](#parameters-8)
--   [shuffle](#shuffle)
-    -   [Parameters](#parameters-9)
 -   [prettyPrint](#prettyprint)
+    -   [Parameters](#parameters-9)
+-   [prettyPrintHTML](#prettyprinthtml)
     -   [Parameters](#parameters-10)
--   [binarySearch](#binarysearch)
+-   [shuffle](#shuffle)
     -   [Parameters](#parameters-11)
+-   [binarySearch](#binarysearch)
+    -   [Parameters](#parameters-12)
 -   [TransformerType](#transformertype)
     -   [Properties](#properties)
 -   [Transformer](#transformer)
     -   [transform](#transform)
-        -   [Parameters](#parameters-12)
-    -   [transform](#transform-1)
         -   [Parameters](#parameters-13)
-    -   [isType](#istype)
+    -   [transform](#transform-1)
         -   [Parameters](#parameters-14)
+    -   [isType](#istype)
+        -   [Parameters](#parameters-15)
 -   [wrap](#wrap)
-    -   [Parameters](#parameters-15)
--   [filterObject](#filterobject)
     -   [Parameters](#parameters-16)
--   [findByMatchingProperties](#findbymatchingproperties)
+-   [filterObject](#filterobject)
     -   [Parameters](#parameters-17)
--   [sortObjects](#sortobjects)
+-   [findByMatchingProperties](#findbymatchingproperties)
     -   [Parameters](#parameters-18)
--   [mergeSort](#mergesort)
+-   [sortObjects](#sortobjects)
     -   [Parameters](#parameters-19)
--   [mergeSort](#mergesort-1)
+-   [mergeSort](#mergesort)
     -   [Parameters](#parameters-20)
--   [mergeSort](#mergesort-2)
+-   [mergeSort](#mergesort-1)
     -   [Parameters](#parameters-21)
--   [QuickSort](#quicksort)
+-   [mergeSort](#mergesort-2)
     -   [Parameters](#parameters-22)
--   [formatBinary](#formatbinary)
+-   [QuickSort](#quicksort)
     -   [Parameters](#parameters-23)
--   [binaryToHex](#binarytohex)
+-   [formatBinary](#formatbinary)
     -   [Parameters](#parameters-24)
--   [formatDate](#formatdate)
+-   [binaryToHex](#binarytohex)
     -   [Parameters](#parameters-25)
--   [filter](#filter)
+-   [formatDate](#formatdate)
     -   [Parameters](#parameters-26)
+-   [filter](#filter)
+    -   [Parameters](#parameters-27)
 -   [sizeOf](#sizeof)
 -   [formatByteSize](#formatbytesize)
 -   [memorySizeOf](#memorysizeof)
 -   [hammingDistance](#hammingdistance)
-    -   [Parameters](#parameters-27)
--   [isEqual](#isequal)
     -   [Parameters](#parameters-28)
+-   [isEqual](#isequal)
+    -   [Parameters](#parameters-29)
 
 ## isString
 
@@ -179,6 +181,31 @@ isDefined - Checks and returns if a passed variable is defined
 
 Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if value is defined
 
+## prettyPrint
+
+Prints an object nicely
+
+### Parameters
+
+-   `obj` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** The object to print
+-   `spaces` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Use spaces instead of tabs (optional, default `false`)
+-   `number` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Number spaces to use (if spaces is true) (optional, default `2`)
+
+Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** formatted JSON string
+
+## prettyPrintHTML
+
+Prints an object nicely in HTML
+
+### Parameters
+
+-   `obj` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** The object to print
+-   `indent`   (optional, default `0`)
+-   `array`   (optional, default `false`)
+-   `last`   (optional, default `true`)
+
+Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** formatted JSON string in HTML
+
 ## shuffle
 
 Shuffles an Array with Fisher-Yates Shuffle algorithm
@@ -188,18 +215,6 @@ Shuffles an Array with Fisher-Yates Shuffle algorithm
 -   `array` **[array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** The array to shuffle
 
 Returns **[array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** A new shuffled array
-
-## prettyPrint
-
-Prints an object nicely
-
-### Parameters
-
--   `obj` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** The object to print
--   `spaces` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Use spaces instead of tabs
--   `number`  
-
-Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** number The number of spaces to pad
 
 ## binarySearch
 

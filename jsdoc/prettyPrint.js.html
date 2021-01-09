@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-		<title>hamming.js</title>
+		<title>prettyPrint.js</title>
 		<link rel="icon" type="image/png" href="favicon.png"/>
 		<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -114,7 +114,7 @@
 	<!-- end:navbar.hbs -->		<div class="page-header">
 			<div class="container">
 				<span class="kind">source</span>
-				<h1><span class="name">hamming.js</span></h1>
+				<h1><span class="name">prettyPrint.js</span></h1>
 			</div>
 		</div>
 	<div class="container content">
@@ -122,53 +122,124 @@
 			<div class="col-md-12 main-content">
 		<section class="source-section">
 			<article></article>
-			<pre class="prettyprint source language-javascript line-numbers"><code class="language-javascript">
-/**
- * The Hamming Distance is the number of different symbols between two
- * strings/numbers (equal length). It can be also considered as the number of
- * changes required to convert from one input to another.
- *
- * @param {number|string} num1 First number
- * @param {number|string} num2 Second number
- * @returns {number} the distance
- */
-const hammingDistance = (num1, num2) => {
-  let distance = 0;
-  // Convert the numbers to their binary string representations
-  let binA = num1.toString(2);
-  let binB = num2.toString(2);
+			<pre class="prettyprint source language-javascript line-numbers"><code class="language-javascript">// List of HTML entities for escaping.
+const htmlEscapes = {
+  '&amp;': '&lt;span class="char">&amp;amp;&lt;/span>',
+  '&lt;': '&lt;span class="char">&amp;lt;&lt;/span>',
+  '>': '&lt;span class="char">&amp;gt;&lt;/span>',
+  '"': '&lt;span class="char">&amp;quot;&lt;/span>',
+  "'": '&lt;span class="char">&amp;#x27;&lt;/span>',
+  '/': '&lt;span class="char">&amp;#x2F;&lt;/span>'
+};
 
-  // We need to zero-pad if the resulting binary string representations are not of equal length
-  let diff = binB.length - binA.length;
+// Regex containing the keys listed immediately above.
+const htmlEscaper = /[&amp;&lt;>"'\/]/g;
 
-  // binary string representations of num1 is longer
-  if (diff > 0) {
-    let pad = '';
-    while (diff) {
-      pad += '0';
-      diff--;
-    }
-    binA = pad + binA;
-  // binary string representations of num2 is longer
-  } else if (diff &lt; 0) {
-    let pad = '';
-    while (diff) {
-      pad += '0';
-      diff++;
-    }
-    binB = pad + binB;
-  }
-
-  // Go through each character of the binary string representations and compare
-  binA.split('').forEach((n, i)=> {
-    // If there is a difference, increase the distance value
-    if (n !== binB[i]) distance++;
+// Escape a string for HTML interpolation.
+export const escapeForHTML = (string) => {
+  return ("" + string).replace(htmlEscaper, (match) => {
+    return htmlEscapes[match];
   });
-  return distance;
-}
+};
 
-export default hammingDistance;
-</code></pre>
+
+/**
+ * Prints an object nicely
+ *
+ * @param {object} obj The object to print
+ * @param {boolean} spaces Use spaces instead of tabs
+ * @param {number} number Number spaces to use (if spaces is true)
+ * @returns {string} formatted JSON string
+ */
+export const prettyPrint = (obj, spaces = false, number = 2) => {
+  let ret = "";
+  if (obj &amp;&amp; typeof obj === "object") {
+    let x = "\t";
+    if (spaces) {
+      x = " ".repeat(number);
+    }
+    ret = JSON.stringify(obj, null, x);
+  }
+  return ret;
+};
+
+const indentHTMLSpaces = (num = 1) => {
+  let i = 0, html = /*html*/`&lt;span class="indent">`;
+  for (i; i &lt; num; i++) {
+    html += /*html*/`&amp;nbsp;`;
+  }
+  html += /*html*/`&lt;/span>`;
+  return html;
+};
+
+/**
+ * Prints an object nicely in HTML
+ *
+ * @param {object} obj The object to print
+ * @returns {string} formatted JSON string in HTML
+ */
+export const prettyPrintHTML = (obj, indent = 0, array = false, last = true) => {
+  const BASE_INDENT = (indent > 0) ? indentHTMLSpaces(indent) : "";
+  const OBJECT_INDENT = indentHTMLSpaces(indent + 2);
+  let html = /*html*/`&lt;div>${BASE_INDENT}&lt;span class="brace">${(array) ? "[" : "{"}&lt;/span>&lt;/div>`;
+  if (obj &amp;&amp; typeof obj === "object") {
+    const keys = Object.keys(obj), l = keys.length;
+    let i = 0, key, value;
+    for (i; i &lt; l; i++) {
+      key = keys[i];
+      value = obj[key];
+      
+      if (typeof value === "string") {
+        if (array) {
+          html += /*html*/`&lt;div>${OBJECT_INDENT}&lt;span class="string">"${escapeForHTML(value)}"&lt;/span>`;
+        } else {
+          html += /*html*/`&lt;div>${OBJECT_INDENT}&lt;span class="key">"${key}"&lt;/span>&lt;span class="operator">:&lt;/span>&amp;nbsp;&lt;span class="string">"${escapeForHTML(value)}"&lt;/span>`;
+        }
+        if (i &lt; l - 1) {
+        html += /*html*/`&lt;span class="operator">,&lt;/span>`;
+        }
+        html += /*html*/`&lt;/div>`;
+      } else if (typeof value === "number") {
+        if (array) {
+          html += /*html*/`&lt;div>${OBJECT_INDENT}&lt;span class="number">${value}&lt;/span>`;
+        } else {
+          html += /*html*/`&lt;div>${OBJECT_INDENT}&lt;span class="key">"${key}"&lt;/span>&lt;span class="operator">:&lt;/span>&amp;nbsp;&lt;span class="number">${value}&lt;/span>`;
+        }
+        if (i &lt; l - 1) {
+        html += /*html*/`&lt;span class="operator">,&lt;/span>`;
+        }
+        html += /*html*/`&lt;/div>`;
+      } else if (Array.isArray(value) === true) {
+        if (!array) {
+          html += /*html*/`&lt;div>${OBJECT_INDENT}&lt;span class="key">"${key}"&lt;/span>&lt;span class="operator">:&lt;/span>&amp;nbsp;`;
+        }
+        html += prettyPrintHTML(value, indent + 2, true, !(i &lt; l - 1));
+      } else if (typeof value === "object") {
+        if (!array) {
+          html += /*html*/`&lt;div>${OBJECT_INDENT}&lt;span class="key">"${key}"&lt;/span>&lt;span class="operator">:&lt;/span>&amp;nbsp;`;
+        }
+        
+        html += prettyPrintHTML(value, indent + 2, false, !(i &lt; l - 1));
+      } else {
+        if (array) {
+          html += /*html*/`&lt;div>${OBJECT_INDENT}&lt;span class="string">"${escapeForHTML(value)}"&lt;/span>`;
+        } else {
+          html += /*html*/`&lt;div>${OBJECT_INDENT}&lt;span class="key">"${key}"&lt;/span>&lt;span class="operator">:&lt;/span>&amp;nbsp;&lt;span class="string">"${escapeForHTML(value)}"&lt;/span>`;
+        }
+        if (i &lt; l - 1) {
+        html += /*html*/`&lt;span class="operator">,&lt;/span>`;
+        }
+        html += /*html*/`&lt;/div>`;
+      }
+    }
+    html += /*html*/`&lt;div>${BASE_INDENT}&lt;span class="brace">${(array) ? "]" : "}"}&lt;/span>`;
+    if (!last) {
+      html += /*html*/`&lt;span class="operator">,&lt;/span>`;
+     }
+     html += /*html*/`&lt;/div>`;
+  }
+  return html;
+};</code></pre>
 		</section>
 			</div>
 		</div>

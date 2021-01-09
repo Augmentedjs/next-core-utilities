@@ -17,21 +17,6 @@ export const shuffle = (array) => {
 };
 
 /**
- * Prints an object nicely
- *
- * @param {object} obj The object to print
- * @param {boolean} spaces Use spaces instead of tabs
- * @returns {number} number The number of spaces to pad
- */
-export const prettyPrint = (obj, spaces, number) => {
-  let x = "\t";
-  if (spaces) {
-    x = " ".repeat(number);
-  }
-  return JSON.stringify(obj, null, x);
-};
-
-/**
  * Performs a binary search on the host array. vs indexOf<br/>
  * Binary Search is a complexity of <em>O(n log n)</em> vs <em>O(n)</em> with indexOf
  *

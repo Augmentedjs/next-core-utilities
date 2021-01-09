@@ -4,11 +4,12 @@ const dom = (new JSDOM('<!doctype html><html><body><article><section id="header"
 
 global.document = dom.document;
 global.window = dom.window;
-global.navigator = {
-  userAgent: "node.js"
-};
 
-global.Utilities = require("../src/index.js");
+global.HTMLElement = dom.window.HTMLElement;
+global.Node = dom.window.Node;
+global.navigator = global.window.navigator;
+
+global.Utilities = require("../temp/next-core-utilities.js");
 
 const chai = require("chai");
 global.chai = chai;

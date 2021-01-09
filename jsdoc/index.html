@@ -83,6 +83,7 @@
 											<li><a href="global.html#isString">isString</a></li>
 											<li><a href="global.html#memorySizeOf">memorySizeOf</a></li>
 											<li><a href="global.html#prettyPrint">prettyPrint</a></li>
+											<li><a href="global.html#prettyPrintHTML">prettyPrintHTML</a></li>
 											<li><a href="global.html#shuffle">shuffle</a></li>
 											<li><a href="global.html#sizeOf">sizeOf</a></li>
 											<li><a href="global.html#TransformerType">TransformerType</a></li>
@@ -172,19 +173,24 @@
 <li><a href="#parameters-8">Parameters</a></li>
 </ul>
 </li>
-<li><a href="#shuffle">shuffle</a>
+<li><a href="#prettyprint">prettyPrint</a>
 <ul>
 <li><a href="#parameters-9">Parameters</a></li>
 </ul>
 </li>
-<li><a href="#prettyprint">prettyPrint</a>
+<li><a href="#prettyprinthtml">prettyPrintHTML</a>
 <ul>
 <li><a href="#parameters-10">Parameters</a></li>
 </ul>
 </li>
-<li><a href="#binarysearch">binarySearch</a>
+<li><a href="#shuffle">shuffle</a>
 <ul>
 <li><a href="#parameters-11">Parameters</a></li>
+</ul>
+</li>
+<li><a href="#binarysearch">binarySearch</a>
+<ul>
+<li><a href="#parameters-12">Parameters</a></li>
 </ul>
 </li>
 <li><a href="#transformertype">TransformerType</a>
@@ -196,79 +202,79 @@
 <ul>
 <li><a href="#transform">transform</a>
 <ul>
-<li><a href="#parameters-12">Parameters</a></li>
+<li><a href="#parameters-13">Parameters</a></li>
 </ul>
 </li>
 <li><a href="#transform-1">transform</a>
 <ul>
-<li><a href="#parameters-13">Parameters</a></li>
+<li><a href="#parameters-14">Parameters</a></li>
 </ul>
 </li>
 <li><a href="#istype">isType</a>
 <ul>
-<li><a href="#parameters-14">Parameters</a></li>
+<li><a href="#parameters-15">Parameters</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><a href="#wrap">wrap</a>
 <ul>
-<li><a href="#parameters-15">Parameters</a></li>
+<li><a href="#parameters-16">Parameters</a></li>
 </ul>
 </li>
 <li><a href="#filterobject">filterObject</a>
 <ul>
-<li><a href="#parameters-16">Parameters</a></li>
+<li><a href="#parameters-17">Parameters</a></li>
 </ul>
 </li>
 <li><a href="#findbymatchingproperties">findByMatchingProperties</a>
 <ul>
-<li><a href="#parameters-17">Parameters</a></li>
+<li><a href="#parameters-18">Parameters</a></li>
 </ul>
 </li>
 <li><a href="#sortobjects">sortObjects</a>
 <ul>
-<li><a href="#parameters-18">Parameters</a></li>
+<li><a href="#parameters-19">Parameters</a></li>
 </ul>
 </li>
 <li><a href="#mergesort">mergeSort</a>
 <ul>
-<li><a href="#parameters-19">Parameters</a></li>
+<li><a href="#parameters-20">Parameters</a></li>
 </ul>
 </li>
 <li><a href="#mergesort-1">mergeSort</a>
 <ul>
-<li><a href="#parameters-20">Parameters</a></li>
+<li><a href="#parameters-21">Parameters</a></li>
 </ul>
 </li>
 <li><a href="#mergesort-2">mergeSort</a>
 <ul>
-<li><a href="#parameters-21">Parameters</a></li>
+<li><a href="#parameters-22">Parameters</a></li>
 </ul>
 </li>
 <li><a href="#quicksort">QuickSort</a>
 <ul>
-<li><a href="#parameters-22">Parameters</a></li>
+<li><a href="#parameters-23">Parameters</a></li>
 </ul>
 </li>
 <li><a href="#formatbinary">formatBinary</a>
 <ul>
-<li><a href="#parameters-23">Parameters</a></li>
+<li><a href="#parameters-24">Parameters</a></li>
 </ul>
 </li>
 <li><a href="#binarytohex">binaryToHex</a>
 <ul>
-<li><a href="#parameters-24">Parameters</a></li>
+<li><a href="#parameters-25">Parameters</a></li>
 </ul>
 </li>
 <li><a href="#formatdate">formatDate</a>
 <ul>
-<li><a href="#parameters-25">Parameters</a></li>
+<li><a href="#parameters-26">Parameters</a></li>
 </ul>
 </li>
 <li><a href="#filter">filter</a>
 <ul>
-<li><a href="#parameters-26">Parameters</a></li>
+<li><a href="#parameters-27">Parameters</a></li>
 </ul>
 </li>
 <li><a href="#sizeof">sizeOf</a></li>
@@ -276,12 +282,12 @@
 <li><a href="#memorysizeof">memorySizeOf</a></li>
 <li><a href="#hammingdistance">hammingDistance</a>
 <ul>
-<li><a href="#parameters-27">Parameters</a></li>
+<li><a href="#parameters-28">Parameters</a></li>
 </ul>
 </li>
 <li><a href="#isequal">isEqual</a>
 <ul>
-<li><a href="#parameters-28">Parameters</a></li>
+<li><a href="#parameters-29">Parameters</a></li>
 </ul>
 </li>
 </ul>
@@ -361,6 +367,25 @@ simular to underscore .result method</p>
 <li><code>variable</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> to check</li>
 </ul>
 <p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></strong> true if value is defined</p>
+<h2>prettyPrint</h2>
+<p>Prints an object nicely</p>
+<h3>Parameters</h3>
+<ul>
+<li><code>obj</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></strong> The object to print</li>
+<li><code>spaces</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></strong> Use spaces instead of tabs (optional, default <code>false</code>)</li>
+<li><code>number</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></strong> Number spaces to use (if spaces is true) (optional, default <code>2</code>)</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> formatted JSON string</p>
+<h2>prettyPrintHTML</h2>
+<p>Prints an object nicely in HTML</p>
+<h3>Parameters</h3>
+<ul>
+<li><code>obj</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></strong> The object to print</li>
+<li><code>indent</code>   (optional, default <code>0</code>)</li>
+<li><code>array</code>   (optional, default <code>false</code>)</li>
+<li><code>last</code>   (optional, default <code>true</code>)</li>
+</ul>
+<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></strong> formatted JSON string in HTML</p>
 <h2>shuffle</h2>
 <p>Shuffles an Array with Fisher-Yates Shuffle algorithm</p>
 <h3>Parameters</h3>
@@ -368,15 +393,6 @@ simular to underscore .result method</p>
 <li><code>array</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a></strong> The array to shuffle</li>
 </ul>
 <p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a></strong> A new shuffled array</p>
-<h2>prettyPrint</h2>
-<p>Prints an object nicely</p>
-<h3>Parameters</h3>
-<ul>
-<li><code>obj</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></strong> The object to print</li>
-<li><code>spaces</code> <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></strong> Use spaces instead of tabs</li>
-<li><code>number</code></li>
-</ul>
-<p>Returns <strong><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></strong> number The number of spaces to pad</p>
 <h2>binarySearch</h2>
 <p>Performs a binary search on the host array. vs indexOf<br/><br>
 Binary Search is a complexity of <em>O(n log n)</em> vs <em>O(n)</em> with indexOf</p>
@@ -563,7 +579,7 @@ not assume browsers.</em></p>
 	</div>
 	<footer>
 				<div class="footer-option"><a href='http://www.augmentedjs.com'>Augmented.js Homepage</a></div>
-			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.5</a> on Wed Sep 2nd 2020 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Sat Jan 9th 2021 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
 	</footer>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

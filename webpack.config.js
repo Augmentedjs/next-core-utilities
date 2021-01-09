@@ -25,13 +25,13 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
-      }
+      },
     ]
   },
   externals: {
   },
   stats: "errors-only",
-  devtool: (isProd) ? "none": "source-map",
+  devtool: isProd ? false : "source-map",
   plugins: [
     new CleanWebpackPlugin(),
     new webpack.DefinePlugin({
